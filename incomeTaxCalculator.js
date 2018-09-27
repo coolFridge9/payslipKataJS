@@ -6,5 +6,10 @@ exports.calculateTax = function(salary){
         const extraTax = dollarsOverTaxBracket * 0.19;
         const fixedTax = 18200;
         return fixedTax + extraTax;
+    } else if(salary < 87001){
+        const dollarsOverTaxBracket = salary - 37000;
+        const extraTax = dollarsOverTaxBracket * 0.325;
+        const fixedTax = 37000;
+        return fixedTax + extraTax;
     }
 };
