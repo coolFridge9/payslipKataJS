@@ -67,3 +67,6 @@ fabric.properties
 
 # .idea
 .idea
+
+#node modules
+node_modules
