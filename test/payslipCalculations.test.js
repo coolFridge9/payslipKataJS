@@ -1,4 +1,4 @@
-const calculateTax = require("../incomeTaxCalculator").calculateTax;
+const calculateTax = require("../payslipCalculations").calculateTax;
 
 describe.each`
 salary                 | expected       | testReason
