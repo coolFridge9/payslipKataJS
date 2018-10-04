@@ -1,4 +1,4 @@
-const calculateTax = require("calculateTax").calculateTax;
+const calculateTax = require("/Users/jordan.elley/code/payslipJS/calculateTax.js").calculateTax;
 
 exports.processUserDetails = function(userDetails){
     const name = processName(userDetails.firstName, userDetails.lastName);
@@ -31,7 +31,7 @@ function calculateGrossIncome(annualSalary){
 }
 
 function calculateNetIncome(grossIncome, incomeTax){
-    return grossIncome - incomeTax;
+    return grossIncome - (incomeTax / 12);
 }
 
 function getSuper(netIncome, superRate) {
