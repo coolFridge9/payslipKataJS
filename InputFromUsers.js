@@ -25,8 +25,8 @@ exports.getUserInput = function() {
     return {
         firstName : name,
         lastName : surname,
-        annualSalary : annualSalary,
-        superRate : superRate,
+        annualSalary : parseFloat(annualSalary),
+        superRate : parseFloat(superRate),
         paymentStartDate : paymentStartDate,
         paymentEndDate : paymentEndDate
     };
