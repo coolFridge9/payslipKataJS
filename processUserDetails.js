@@ -27,14 +27,14 @@ function getPayPeriod(startDate, endDate){
 }
 
 function calculateGrossIncome(annualSalary){
-    return annualSalary/12.0;
+    return Math.round(annualSalary/12.0);
 }
 
 function calculateNetIncome(grossIncome, incomeTax){
-    return grossIncome - (incomeTax / 12);
+    return Math.round(grossIncome - (incomeTax / 12));
 }
 
 function getSuper(netIncome, superRate) {
-    return netIncome * superRate/100;
+    return Math.round(netIncome * superRate/100);
 }
 
