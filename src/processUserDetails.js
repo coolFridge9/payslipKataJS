@@ -39,11 +39,11 @@ function calculateMonthlyTax(annualSalary){
 }
 
 function calculateGrossMonthlyIncome(annualSalary){
-    return Math.round(annualSalary/12.0);
+    return Math.round(annualSalary/12);
 }
 
 function calculateMonthlyNetIncome(grossIncome, incomeTax){
-    return Math.round(grossIncome - (incomeTax));
+    return Math.round(grossIncome - incomeTax);
 }
 
 function getMonthlySuper(grossIncome, superRate) {

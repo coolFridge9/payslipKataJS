@@ -1,4 +1,6 @@
 exports.displayDataInText = function(processedUserData){
+    console.log("\n" + "Your payslip has been generated: \n");
+
     console.log("Name:", processedUserData.name);
     console.log("Pay Period:", processedUserData.payPeriod);
     console.log("Gross Income:", processedUserData.grossIncome);
