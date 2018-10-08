@@ -15,7 +15,6 @@ exports.getUserInput = function() {
     }
 
     let superRate = readline.question("Please enter your super rate: ");
-
     while(!validator.isValidPercentage(superRate)) {
         console.log("error invalid value");
         superRate = readline.question("Please enter your super rate: ");

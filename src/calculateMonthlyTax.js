@@ -2,7 +2,7 @@ function taxForBracket(salary, previousTaxBracketMaxIncome, centsPerDollarOverFi
     const dollarsOverTaxBracket = salary - previousTaxBracketMaxIncome;
     const extraTax = dollarsOverTaxBracket * centsPerDollarOverFixedTax;
     const fixedTax = fixedTaxForBracket;
-    return extraTax + fixedTax;
+    return Math.round((extraTax + fixedTax)/12);
 }
 
 exports.calculateTax = function(salary){

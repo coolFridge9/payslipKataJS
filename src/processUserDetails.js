@@ -1,4 +1,4 @@
-const calculateTax = require("./calculateTax.js").calculateTax;
+const calculateTax = require("./calculateMonthlyTax.js").calculateTax;
 
 exports.processUserDetails = function(userDetails){
     const name = processName(userDetails.firstName, userDetails.lastName);
@@ -35,7 +35,7 @@ function getPayPeriod(startDate, endDate){
 }
 
 function calculateMonthlyTax(annualSalary){
-    return Math.round(calculateTax(annualSalary)/12);
+    return calculateTax(annualSalary);
 }
 
 function calculateGrossMonthlyIncome(annualSalary){
