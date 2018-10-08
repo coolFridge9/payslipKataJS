@@ -3,18 +3,18 @@ const calculateTax = require("/Users/jordan.elley/code/payslipJS/calculateTax.js
 exports.processUserDetails = function(userDetails){
     const name = processName(userDetails.firstName, userDetails.lastName);
     const payPeriod = getPayPeriod(userDetails.paymentStartDate, userDetails.paymentEndDate);
-    const grossIncome = calculateGrossMonthlyIncome(userDetails.annualSalary);
+    const monthlyGrossIncome = calculateGrossMonthlyIncome(userDetails.annualSalary);
     const monthlyTax = calculateMonthlyTax(userDetails.annualSalary);
-    const netIncome = calculateMonthlyNetIncome(grossIncome, monthlyTax);
-    const superContribution = getMonthlySuper(grossIncome, userDetails.superRate);
+    const monthlyNetIncome = calculateMonthlyNetIncome(monthlyGrossIncome, monthlyTax);
+    const monthlySuperContribution = getMonthlySuper(monthlyGrossIncome, userDetails.superRate);
 
     return {
         name : name,
         payPeriod : payPeriod,
-        grossIncome : grossIncome,
+        grossIncome : monthlyGrossIncome,
         tax : monthlyTax,
-        netIncome : netIncome,
-        superContribution : superContribution
+        netIncome : monthlyNetIncome,
+        superContribution : monthlySuperContribution
     };
 };
 
