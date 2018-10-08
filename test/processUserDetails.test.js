@@ -1,4 +1,4 @@
-const processUserDetails = require("../processUserDetails").processUserDetails;
+const processUserDetails = require("../src/processUserDetails").processUserDetails;
 
 it("check simple example", () => {
     const userDetails = {

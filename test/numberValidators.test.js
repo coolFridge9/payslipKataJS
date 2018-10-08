@@ -1,4 +1,4 @@
-const numberValidators = require("../numberValidators");
+const numberValidators = require("../src/numberValidators");
 
 describe.each`
 number                 | expected          | testReason

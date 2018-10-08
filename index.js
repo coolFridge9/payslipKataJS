@@ -1,2 +1,2 @@
-const getInputFromUsers = require("./InputFromUsers").getUserInput;
+const getInputFromUsers = require("./src/InputFromUsers").getUserInput;
 const userDetails = getInputFromUsers();

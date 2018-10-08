@@ -1,4 +1,4 @@
-const calculateTax = require("/Users/jordan.elley/code/payslipJS/calculateTax.js").calculateTax;
+const calculateTax = require("/Users/jordan.elley/code/payslipJS/src/calculateTax.js").calculateTax;
 
 exports.processUserDetails = function(userDetails){
     const name = processName(userDetails.firstName, userDetails.lastName);
