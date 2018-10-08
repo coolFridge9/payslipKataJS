@@ -3,6 +3,8 @@ const validator = require("/Users/jordan.elley/code/payslipJS/src/numberValidato
 
 
 exports.getUserInput = function() {
+    console.log("Welcome to the payslip generator!"+"\n");
+
     const name = readline.question("Please input your name: ");
     const surname = readline.question("Please input your surname: ");
 
