@@ -1,4 +1,5 @@
-const calculateTax = require("./calculateMonthlyTax.js").calculateTax;
+const calculateMonthlyTax = require("./calculateMonthlyTax.js").calculateMonthlyTax;
+const calculateMonthlySuper = require("./calculateMonthlySuper.js").calculateMonthlySuper;
 
 exports.processUserDetails = function(userDetails){
     const name = processName(userDetails.firstName, userDetails.lastName);
@@ -6,7 +7,7 @@ exports.processUserDetails = function(userDetails){
     const monthlyGrossIncome = calculateGrossMonthlyIncome(userDetails.annualSalary);
     const monthlyTax = calculateMonthlyTax(userDetails.annualSalary);
     const monthlyNetIncome = calculateMonthlyNetIncome(monthlyGrossIncome, monthlyTax);
-    const monthlySuperContribution = getMonthlySuper(monthlyGrossIncome, userDetails.superRate);
+    const monthlySuperContribution = calculateMonthlySuper(monthlyGrossIncome, userDetails.superRate);
 
     return {
         name : name,
@@ -34,10 +35,6 @@ function getPayPeriod(startDate, endDate){
     return padDate(startDate) + " - " + padDate(endDate);
 }
 
-function calculateMonthlyTax(annualSalary){
-    return calculateTax(annualSalary);
-}
-
 function calculateGrossMonthlyIncome(annualSalary){
     return Math.round(annualSalary/12);
 }
@@ -46,7 +43,4 @@ function calculateMonthlyNetIncome(grossIncome, incomeTax){
     return Math.round(grossIncome - incomeTax);
 }
 
-function getMonthlySuper(grossIncome, superRate) {
-    return Math.round(grossIncome * superRate/100);
-}
 

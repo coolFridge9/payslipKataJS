@@ -5,7 +5,7 @@ function taxForBracket(salary, previousTaxBracketMaxIncome, centsPerDollarOverFi
     return Math.round((extraTax + fixedTax)/12);
 }
 
-exports.calculateTax = function(salary){
+exports.calculateMonthlyTax = function(salary){
     if(salary < 18201){
         return 0;
     } else if(salary < 37001){

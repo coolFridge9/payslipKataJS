@@ -1,4 +1,4 @@
-const calculateTax = require("../src/calculateMonthlyTax").calculateTax;
+const calculateTax = require("../src/calculateMonthlyTax").calculateMonthlyTax;
 
 describe.each`
 salary                 | expected       | testReason

@@ -1,4 +1,4 @@
-const userDetails = require("./src/InputFromUsers").getUserInput();
+const userDetails = require("./src/inputFromUsers").getUserInput();
 const processedUserDetails = require("./src/processUserDetails").processUserDetails(userDetails);
-require("./src/DisplayData").displayDataInText(processedUserDetails);
+require("./src/displayData").displayDataInText(processedUserDetails);
 
