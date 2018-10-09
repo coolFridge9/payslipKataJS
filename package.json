@@ -1,7 +1,9 @@
 {
   "name": "test",
   "version": "0.0.1",
-  "dependencies": {},
+  "dependencies": {
+    "readline-sync": "^1.4.9"
+  },
   "devDependencies": {
     "jest": "^23.6.0"
   }
