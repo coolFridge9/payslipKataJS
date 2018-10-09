@@ -1,5 +1,5 @@
 const readline = require("readline-sync");
-const validator = require("/Users/jordan.elley/code/payslipJS/src/numberValidators.js");
+const validator = require("./numberValidators.js");
 
 
 exports.getUserInput = function() {
