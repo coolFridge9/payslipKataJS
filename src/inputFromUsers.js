@@ -11,7 +11,7 @@ exports.getUserInput = function() {
     let annualSalary = readline.question("Please enter your annual salary: ");
     while(!validator.isPositiveNumber(annualSalary)) {
         console.log("error invalid value");
-        annualSalary = readline.question("Please enter your annual salary: ");
+        annualSalary = readline.question("Please enter your annual salary: "); //do-while to avoid duplication
     }
 
     let superRate = readline.question("Please enter your super rate: ");
