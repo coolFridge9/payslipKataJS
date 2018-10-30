@@ -1,13 +1,12 @@
 exports.displayDataInText = function(processedUserData){
-    console.log("\n" + "Your payslip has been generated: \n");
+    let displayData = "\n" + "Your payslip has been generated: \n" +
+        "\nName: "+ processedUserData.name +
+        "\nPay Period: "+ processedUserData.payPeriod +
+        "\nGross Income:" + processedUserData.grossIncome +
+        "\nIncome Tax: " + processedUserData.tax +
+        "\nNet Income: " + processedUserData.netIncome +
+        "\nSuper: " + processedUserData.superContribution +
+        "\n" + "Thank you for using MYOB!";
 
-    console.log("Name:", processedUserData.name);
-    console.log("Pay Period:", processedUserData.payPeriod);
-    console.log("Gross Income:", processedUserData.grossIncome);
-    console.log("Income Tax:", processedUserData.tax);
-    console.log("Net Income:", processedUserData.netIncome);
-    console.log("Super:", processedUserData.superContribution);
-
-
-    console.log("\n" + "Thank you for using MYOB!");
+    return displayData;
 };

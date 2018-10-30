@@ -1,25 +1,64 @@
 <!DOCTYPE html>
 <html>
-<body>
+
+<style>
+    input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    input[type=button]:hover {
+        background-color: #F324F3;
+        width: 200px;
+        height: 40px;
+    }
+
+    input[type=button] {
+        background-color: #F39DF3;
+        width: 200px;
+        height: 40px;
+    }
+
+    div {
+        border-radius: 10px;
+        background-color: #F39DF3;
+        padding: 20px;
+    }
+</style>
+<h2>Welcome to the payslip generator!</h2>
+<body bgcolor="#F1DAF1">
+<script src="indexForWebsite.js"></script>
+<script src="./src/calculateMonthlyTax.js"></script>
+<script src="./src/displayData.js"></script>
+<script src="./src/calculateMonthlySuper.js"></script>
+<script src="./src/getInputGeneral.js"></script>
+<script src="./src/processUserDetails.js"></script>
+<script src="./src/numberValidators.js"></script>
 <form action="/action_page.php">
-    First name: <input type="text" name="fname"><br>
-    Last name: <input type="text" name="lname"><br>
-    Annual Salary: <input type="text" name="salary"><br>
-    Super Rate: <input type="text" name="super"><br>
-    Payment Start Date: <input type="text" name="start"><br>
-    Payment End Date: <input type="text" name="end"><br>
-    <input type="submit" value="Generate Payslip">
+    First name: <input type="text" name="fname" id="firstName"><br>
+    Last name: <input type="text" name="lname" id="lastName"><br>
+    Annual Salary: <input type="text" name="salary" id="salary"><br>
+    Super Rate: <input type="text" name="super2" id="super2"><br>
+    Payment Start Date: <input type="text" name="start" id="start"><br>
+    Payment End Date: <input type="text" name="end"id="end"><br>
+    <input type="button" value="Generate Payslip", onclick= alert(getGeneralInput(document.getElementById("firstName").value,document.getElementById("lastName").value,document.getElementById("salary").value,document.getElementById("super2").value,document.getElementById("start").value,document.getElementById("end").value))>
 </form>
-
-<p id="demo"></p>
-
-<script>
-    document.getElementById("demo").innerHTML = "hjvihbi";
-</script>
-
-<p id="userInput"></p>
-<script>document.getElementById("userInput").value = allRows.length+1;</script>
-
 </body>
 </html>
 
