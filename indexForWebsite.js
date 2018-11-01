@@ -69,6 +69,22 @@ function processName(firstName, lastName){
     return firstName + " " + lastName;
 }
 
+function isPositiveNumber(number){
+    if(isNaN(number)) {
+        return false;
+    }
+    const comparableNum = parseFloat(number);
+    return comparableNum >= 0;
+}
+
+function isValidPercentage(number){
+    if(!isPositiveNumber(number)){
+        return false;
+    }
+    const comparableNum = parseFloat(number);
+    return comparableNum <= 100;
+}
+
 function padDate(date) {
     const isNumber = isPositiveNumber;
     if( isNumber(date[0]) && !isNumber(date[1]) ){
@@ -92,8 +108,35 @@ function getMonthlyNetIncome(grossIncome, incomeTax){
 function getGeneralInput(name, surname, annualSalary, superRate, paymentStartDate, paymentEndDate) {
     const userDetails = storeInput(name, surname, annualSalary, superRate, paymentStartDate, paymentEndDate);
     const processedUserDetails = processUserDetails(userDetails);
-    return displayDataInText(processedUserDetails);
+    let errorMessage = "";
+    if(name === " "){
+        errorMessage += "please enter a first name";
+    }
+    if(surname === " "){
+        errorMessage += "please enter a last name";
+    }
+    if(!isPositiveNumber(annualSalary)){
+         errorMessage += "annual salary is invalid\n";
+    }
+    if(!isValidPercentage(superRate)){
+        errorMessage += "super rate is invalid\n";
+    }
+    if(surname === " "){
+        errorMessage += "please enter a pay start date";
+    }
+    if(surname === " "){
+        errorMessage += "please enter a pay end date ";
+    }
+    return errorMessage || displayDataInText(processedUserDetails);
 
+}
+
+let resultsFromPayslip = null;
+function saveResult(results){
+    resultsFromPayslip = results;
+}
+function getResult(){
+    return resultsFromPayslip;
 }
 
 module.exports = {
